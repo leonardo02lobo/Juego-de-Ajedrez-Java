@@ -21,6 +21,7 @@ public class Ventana_Juego extends JFrame {
     movimiento_De_piezas movi = new movimiento_De_piezas();
     PiezaElegir elegir = new PiezaElegir();
     final int ancho = 25, largo = 25;
+    boolean reinaBlanca = true, reinaNegra = true;
     int pieza = 0, posPieza1FilaBlanca = 8, posPieza1colBlanca = 1,
             posPieza2FilaBlanca = 8, posPieza2colBlanca = 3, posPieza3FilaBlanca = 8, posPieza3colBlanca = 5,
             posPieza4FilaBlanca = 8, posPieza4colBlanca = 7,
@@ -439,29 +440,64 @@ public class Ventana_Juego extends JFrame {
         txtColJ2.setText("");
     }
 
-    private void cambioAReina(int fila2, int col2) {
+    private void cambioAReinaBlanca(int col2) {
 
-        if (fila2 == 1 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
-                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8) && pieza == 0) {
+        if (posPieza1FilaBlanca == 1 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
             lbPeonBlanco = new ImageIcon("imagenes/reina1.gif");
             peones1.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaBlanca = false;
+        }else if (posPieza2FilaBlanca == 1 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonBlanco = new ImageIcon("imagenes/reina1.gif");
+            peones2.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaBlanca = false;
+        }else if (posPieza3FilaBlanca == 1 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonBlanco = new ImageIcon("imagenes/reina1.gif");
+            peones3.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaBlanca = false;
+        }else if (posPieza4FilaBlanca == 1 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonBlanco = new ImageIcon("imagenes/reina1.gif");
+            peones4.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaBlanca = false;
+        }
+    }
 
-        } else if (fila2 == 8 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
-                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8) && pieza == 1) {
+    private void cambioAReinaNegra(int col2) {
+
+        if (posPieza1FilaNegra == 8 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
             lbPeonNegro = new ImageIcon("imagenes/reina2.gif");
             peonesN1.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaNegra = false;
+        }else if (posPieza2FilaNegra == 8 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonNegro = new ImageIcon("imagenes/reina2.gif");
+            peonesN2.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaNegra = false;
+        }else if (posPieza3FilaNegra == 8 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonNegro = new ImageIcon("imagenes/reina2.gif");
+            peonesN3.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaNegra = false;
+        }else if (posPieza4FilaNegra == 8 && (col2 == 1 || col2 == 2 || col2 == 3 || col2 == 4
+                || col2 == 5 || col2 == 6 || col2 == 7 || col2 == 8)) {
+            lbPeonNegro = new ImageIcon("imagenes/reina2.gif");
+            peonesN4.setIcon(new ImageIcon(lbPeonBlanco.getImage().getScaledInstance(peones1.getWidth(), peones1.getHeight(), Image.SCALE_SMOOTH)));
+            reinaNegra = false;
         }
     }
 
     private void piezaBlanca(int fila1, int fila2, int col1, int col2, int posX, int posY) {
-
         if (posPieza1FilaBlanca == fila1 && posPieza1colBlanca == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {//para comer piezas
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones1.setBounds(posX, posY, ancho, largo);
                 posPieza1FilaBlanca = fila2;
                 posPieza1colBlanca = col2;
-            } else if (fila1 == (fila2 + 1) && col1 == col2) {
+            }else if (fila1 == (fila2 + 1) && col1 == col2) {//para mover las piezas
                 peones1.setBounds(posX, posY, ancho, largo);
                 posPieza1FilaBlanca = fila2;
                 posPieza1colBlanca = col2;
@@ -471,7 +507,7 @@ public class Ventana_Juego extends JFrame {
                 JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
             }
         } else if (posPieza2FilaBlanca == fila1 && posPieza2colBlanca == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones2.setBounds(posX, posY, ancho, largo);
                 posPieza2FilaBlanca = fila2;
@@ -487,7 +523,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza3FilaBlanca == fila1 && posPieza3colBlanca == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones3.setBounds(posX, posY, ancho, largo);
                 posPieza3FilaBlanca = fila2;
@@ -503,7 +539,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza4FilaBlanca == fila1 && posPieza4colBlanca == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones4.setBounds(posX, posY, ancho, largo);
                 posPieza4FilaBlanca = fila2;
@@ -521,12 +557,15 @@ public class Ventana_Juego extends JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "No hay una pieza en esta casilla");
         }
-        cambioAReina(fila2, col2);
+
+        if (reinaBlanca) {
+            cambioAReinaBlanca(col2);
+        }
     }
 
     private void piezaMiCompaElErik(int fila1, int fila2, int col1, int col2, int posX, int posY) {
         if (posPieza1FilaNegra == fila1 && posPieza1colNegra == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN1.setBounds(posX, posY, ancho, largo);
                 posPieza1FilaNegra = fila2;
@@ -543,7 +582,7 @@ public class Ventana_Juego extends JFrame {
 
         } else if (posPieza2FilaNegra == fila1 && posPieza2colNegra == col1) {
 
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN2.setBounds(posX, posY, ancho, largo);
                 posPieza2FilaNegra = fila2;
@@ -559,7 +598,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza3FilaNegra == fila1 && posPieza3colNegra == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN3.setBounds(posX, posY, ancho, largo);
                 posPieza3FilaNegra = fila2;
@@ -575,7 +614,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza4FilaNegra == fila1 && posPieza4colNegra == col1) {
-            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 + 2)) {
+            if (fila2 == (fila1 + 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN4.setBounds(posX, posY, ancho, largo);
                 posPieza4FilaNegra = fila2;
@@ -593,11 +632,14 @@ public class Ventana_Juego extends JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "No hay una pieza en esta casilla");
         }
-        cambioAReina(fila2, col2);
+        if (reinaNegra) {
+            cambioAReinaNegra(col2);
+        }
     }
 
     private void SeComeLaPieza(int fila1, int fila2, int col1, int col2) {
         if ((fila1 - 1) == (fila2 + 1) && (col1 + 1) == (col2 - 1)) {
+            System.out.println(fila1 + "  " + fila2 + "           " + col1 + " " + col2);
             if ((posPieza1FilaNegra == fila2 + 1) && (posPieza1colNegra == col2 - 1)) {
                 peonesN1.setBounds(0, 0, ancho, largo);
                 vidasNegras--;
@@ -610,18 +652,19 @@ public class Ventana_Juego extends JFrame {
             } else if ((posPieza4FilaNegra == fila2 + 1) && (posPieza4colNegra == col2 - 1)) {
                 peonesN4.setBounds(90, 0, ancho, largo);
                 vidasNegras--;
-            } 
-        }else {
-            if ((posPieza1FilaBlanca == fila2 + 1) && (posPieza1colBlanca == col2 - 1)) {
+            }
+        } else if ((fila1 + 1) == (fila2 - 1) && (col1 - 1) == (col2 + 1)) {
+            System.out.println(fila1 + "  " + fila2 + "           " + col1 + " " + col2);
+            if ((posPieza1FilaBlanca == fila2 - 1) && (posPieza1colBlanca == col2 + 1)) {
                 peones1.setBounds(180, 0, ancho, largo);
                 vidasBlancas--;
-            } else if ((posPieza2FilaBlanca == fila2 + 1) && (posPieza2colBlanca == col2 - 1)) {
+            } else if ((posPieza2FilaBlanca == fila2 - 1) && (posPieza2colBlanca == col2 + 1)) {
                 peones2.setBounds(210, 0, ancho, largo);
                 vidasBlancas--;
-            } else if ((posPieza3FilaBlanca == fila2 + 1) && (posPieza3colBlanca == col2 - 1)) {
+            } else if ((posPieza3FilaBlanca == fila2 - 1) && (posPieza3colBlanca == col2 + 1)) {
                 peones3.setBounds(240, 0, ancho, largo);
                 vidasBlancas--;
-            } else if ((posPieza4FilaBlanca == fila2 + 1) && (posPieza4colBlanca == col2 - 1)) {
+            } else if ((posPieza4FilaBlanca == fila2 - 1) && (posPieza4colBlanca == col2 + 1)) {
                 peones4.setBounds(270, 0, ancho, largo);
                 vidasBlancas--;
             }
