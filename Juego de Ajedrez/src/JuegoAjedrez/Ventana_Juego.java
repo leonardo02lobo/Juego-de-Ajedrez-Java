@@ -501,33 +501,7 @@ public class Ventana_Juego extends JFrame {
 
     private void piezaBlanca(int fila1, int fila2, int col1, int col2, int posX, int posY) {
         if (posPieza1FilaBlanca == fila1 && posPieza1colBlanca == col1) {
-            if (cambioReinaBlanca != 0) {
-
-                if (cambioReinaBlanca == 1) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaBlanca = fila2;
-                        posPieza1colBlanca = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaBlanca = fila2;
-                        posPieza1colBlanca = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaBlanca = fila2;
-                        posPieza1colBlanca = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaBlanca = fila2;
-                        posPieza1colBlanca = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {//para comer piezas
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {//para comer piezas
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones1.setBounds(posX, posY, ancho, largo);
                 posPieza1FilaBlanca = fila2;
@@ -542,33 +516,7 @@ public class Ventana_Juego extends JFrame {
                 JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
             }
         } else if (posPieza2FilaBlanca == fila1 && posPieza2colBlanca == col1) {
-            if (cambioReinaBlanca != 0) {
-
-                if (cambioReinaBlanca == 2) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaBlanca = fila2;
-                        posPieza2colBlanca = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaBlanca = fila2;
-                        posPieza2colBlanca = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaBlanca = fila2;
-                        posPieza2colBlanca = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaBlanca = fila2;
-                        posPieza2colBlanca = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones2.setBounds(posX, posY, ancho, largo);
                 posPieza2FilaBlanca = fila2;
@@ -584,33 +532,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza3FilaBlanca == fila1 && posPieza3colBlanca == col1) {
-            if (cambioReinaBlanca != 0) {
-
-                if (cambioReinaBlanca == 3) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaBlanca = fila2;
-                        posPieza3colBlanca = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaBlanca = fila2;
-                        posPieza3colBlanca = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaBlanca = fila2;
-                        posPieza3colBlanca = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaBlanca = fila2;
-                        posPieza3colBlanca = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones3.setBounds(posX, posY, ancho, largo);
                 posPieza3FilaBlanca = fila2;
@@ -626,33 +548,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza4FilaBlanca == fila1 && posPieza4colBlanca == col1) {
-            if (cambioReinaBlanca != 0) {
-
-                if (cambioReinaBlanca == 4) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaBlanca = fila2;
-                        posPieza4colBlanca = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaBlanca = fila2;
-                        posPieza4colBlanca = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaBlanca = fila2;
-                        posPieza4colBlanca = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peones4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaBlanca = fila2;
-                        posPieza4colBlanca = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peones4.setBounds(posX, posY, ancho, largo);
                 posPieza4FilaBlanca = fila2;
@@ -678,33 +574,7 @@ public class Ventana_Juego extends JFrame {
 
     private void piezaMiCompaElErik(int fila1, int fila2, int col1, int col2, int posX, int posY) {
         if (posPieza1FilaNegra == fila1 && posPieza1colNegra == col1) {
-            if (cambioReinaNegra != 0) {
-
-                if (cambioReinaNegra == 1) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaNegra = fila2;
-                        posPieza1colNegra = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaNegra = fila2;
-                        posPieza1colNegra = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaNegra = fila2;
-                        posPieza1colNegra = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN1.setBounds(posX, posY, ancho, largo);
-                        posPieza1FilaNegra = fila2;
-                        posPieza1colNegra = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN1.setBounds(posX, posY, ancho, largo);
                 posPieza1FilaNegra = fila2;
@@ -721,33 +591,7 @@ public class Ventana_Juego extends JFrame {
 
         } else if (posPieza2FilaNegra == fila1 && posPieza2colNegra == col1) {
 
-             if (cambioReinaNegra != 0) {
-
-                if (cambioReinaNegra == 2) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaNegra = fila2;
-                        posPieza2colNegra = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaNegra = fila2;
-                        posPieza2colNegra = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaNegra = fila2;
-                        posPieza2colNegra = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN2.setBounds(posX, posY, ancho, largo);
-                        posPieza2FilaNegra = fila2;
-                        posPieza2colNegra = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+             if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN2.setBounds(posX, posY, ancho, largo);
                 posPieza2FilaNegra = fila2;
@@ -763,33 +607,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza3FilaNegra == fila1 && posPieza3colNegra == col1) {
-             if (cambioReinaNegra != 0) {
-
-                if (cambioReinaNegra == 3) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaNegra = fila2;
-                        posPieza3colNegra = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaNegra = fila2;
-                        posPieza3colNegra = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaNegra = fila2;
-                        posPieza3colNegra = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN3.setBounds(posX, posY, ancho, largo);
-                        posPieza3FilaNegra = fila2;
-                        posPieza3colNegra = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+            if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN3.setBounds(posX, posY, ancho, largo);
                 posPieza3FilaNegra = fila2;
@@ -805,33 +623,7 @@ public class Ventana_Juego extends JFrame {
             }
 
         } else if (posPieza4FilaNegra == fila1 && posPieza4colNegra == col1) {
-             if (cambioReinaNegra != 0) {
-
-                if (cambioReinaNegra == 4) {
-                    if ((fila2 == (fila1 + 3) || fila2 == (fila1 + 2) || fila2 == (fila1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaNegra = fila2;
-                        posPieza4colNegra = col2;
-                    } else if ((fila1 == (fila2 + 3) || fila1 == (fila2 + 2) || fila1 == (fila2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaNegra = fila2;
-                        posPieza4colNegra = col2;
-                    } else if ((col2 == (col1 + 3) || col2 == (col1 + 2) || col2 == (col1 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaNegra = fila2;
-                        posPieza4colNegra = col2;
-                    } else if ((col1 == (col2 + 3) || col1 == (col2 + 2) || col1 == (col2 + 1))) {
-                        SeComeLaPieza(fila1, fila2, col1, col2);
-                        peonesN4.setBounds(posX, posY, ancho, largo);
-                        posPieza4FilaNegra = fila2;
-                        posPieza4colNegra = col2;
-                    }
-                }
-
-            } else if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+             if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
                 SeComeLaPieza(fila1, fila2, col1, col2);
                 peonesN4.setBounds(posX, posY, ancho, largo);
                 posPieza4FilaNegra = fila2;
