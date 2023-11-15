@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         //objecto para llamar a la clase de barra de carga
-        BarraCarga inicio = new BarraCarga();
+        Ventana_Juego inicio = new Ventana_Juego();
 
         inicio.setVisible(true);
 
