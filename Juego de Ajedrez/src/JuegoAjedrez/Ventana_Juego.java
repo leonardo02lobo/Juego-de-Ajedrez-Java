@@ -381,11 +381,11 @@ public class Ventana_Juego extends JFrame {
 
     private void Posicion() {
 
-        for (int i = 0; i < peonesBlancos.length; i++) {
-            panel2T.add(peonesBlancos[i]);
+        for (JLabel peonesBlanco : peonesBlancos) {
+            panel2T.add(peonesBlanco);
         }
-        for (int i = 0; i < peonesNegros.length; i++) {
-            panel2T.add(peonesNegros[i]);
+        for (JLabel peonesNegro : peonesNegros) {
+            panel2T.add(peonesNegro);
         }
         panel2T.add(tablero1);
         panel2T.revalidate();
@@ -426,43 +426,64 @@ public class Ventana_Juego extends JFrame {
 
         for (int i = 0; i < posPiezasFilasBlancas.length; i++) {
             if (posPiezasFilasBlancas[i] == fila1 && posPiezasColumnasBlancas[i] == col1) {
-                if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {//para comer piezas
+                if (((fila1 + 3) == fila2 && col1 == col2) || ((fila1 - 3) == fila2 && col1 == col2)
+                        || ((col1 + 3) == col2 && fila1 == fila2) || (col1 - 3) == col2 && fila1 == fila2) {
                     SeComeLaPieza(fila1, fila2, col1, col2);
                     peonesBlancos[i].setBounds(posX, posY, ancho, largo);
                     posPiezasFilasBlancas[i] = fila2;
                     posPiezasColumnasBlancas[i] = col2;
-                } else if (fila1 == (fila2 + 1) && col1 == col2) {//para mover las piezas
-                    peonesBlancos[i].setBounds(posX, posY, ancho, largo);
-                    posPiezasFilasBlancas[i] = fila2;
-                    posPiezasColumnasBlancas[i] = col2;
-                } else if (fila1 == fila2 && col1 == col2) {
-                    JOptionPane.showMessageDialog(null, "No se puede mover en la misma casilla");
                 } else {
-                    JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
+
+                    if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 - 2)
+                            || fila2 == (fila1 - 2) && col2 == (col1 - 2)) {//para comer piezas
+                        SeComeLaPieza(fila1, fila2, col1, col2);
+                        peonesBlancos[i].setBounds(posX, posY, ancho, largo);
+                        posPiezasFilasBlancas[i] = fila2;
+                        posPiezasColumnasBlancas[i] = col2;
+                    } else if (fila1 == (fila2 + 1) && col1 == col2) {//para mover las piezas
+                        peonesBlancos[i].setBounds(posX, posY, ancho, largo);
+                        posPiezasFilasBlancas[i] = fila2;
+                        posPiezasColumnasBlancas[i] = col2;
+                    } else if (fila1 == fila2 && col1 == col2) {
+                        JOptionPane.showMessageDialog(null, "No se puede mover en la misma casilla");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
+                    }
                 }
             }
-        }
-        if (reinaBlanca) {
-            cambioAReinaBlanca(col2);
+            if (reinaBlanca) {
+                cambioAReinaBlanca(col2);
+            }
         }
     }
 
     private void piezaMiCompaElErik(int fila1, int fila2, int col1, int col2, int posX, int posY) {
         for (int i = 0; i < posPiezasFilasNegros.length; i++) {
             if (posPiezasFilasNegros[i] == fila1 && posPiezasColumnasNegras[i] == col1) {
-                if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 - 2) && col2 == (col1 + 2)) {
+                if (((fila1 + 3) == fila2 && col1 == col2) || ((fila1 - 3) == fila2 && col1 == col2)
+                        || ((col1 + 3) == col2 && fila1 == fila2) || (col1 - 3) == col2 && fila1 == fila2) {
                     SeComeLaPieza(fila1, fila2, col1, col2);
                     peonesNegros[i].setBounds(posX, posY, ancho, largo);
                     posPiezasFilasNegros[i] = fila2;
                     posPiezasColumnasNegras[i] = col2;
-                } else if ((fila1 + 1) == fila2 && col1 == col2) {
-                    peonesNegros[i].setBounds(posX, posY, ancho, largo);
-                    posPiezasFilasNegros[i] = fila2;
-                    posPiezasColumnasNegras[i] = col2;
-                } else if (fila1 == fila2 && col1 == col2) {
-                    JOptionPane.showMessageDialog(null, "No se puede mover en la misma casilla");
                 } else {
-                    JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
+
+                    if (fila1 == (fila2 - 2) && col2 == (col1 - 2) || fila2 == (fila1 + 2) && col2 == (col1 - 2)
+                            || fila2 == (fila1 - 2) && col2 == (col1 - 2)) {
+                        SeComeLaPieza(fila1, fila2, col1, col2);
+                        peonesNegros[i].setBounds(posX, posY, ancho, largo);
+                        posPiezasFilasNegros[i] = fila2;
+                        posPiezasColumnasNegras[i] = col2;
+                    } else if ((fila1 + 1) == fila2 && col1 == col2) {
+                        peonesNegros[i].setBounds(posX, posY, ancho, largo);
+                        posPiezasFilasNegros[i] = fila2;
+                        posPiezasColumnasNegras[i] = col2;
+                    } else if (fila1 == fila2 && col1 == col2) {
+                        JOptionPane.showMessageDialog(null, "No se puede mover en la misma casilla");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "los peones solo se pueden mover una casilla");
+                    }
+
                 }
 
             }
@@ -474,21 +495,27 @@ public class Ventana_Juego extends JFrame {
     }
 
     private void SeComeLaPieza(int fila1, int fila2, int col1, int col2) {
-
         for (int i = 0; i < posPiezasFilasBlancas.length; i++) {
-            if ((fila1 - 1) == (fila2 + 1) && (col1 + 1) == (col2 - 1)) {
-
-                if ((posPiezasFilasNegros[i] == fila2 + 1) && (posPiezasColumnasNegras[i] == col2 - 1)) {
+            if ((fila1 - 1) == (fila2 + 1) && (col1 + 1) == (col2 - 1)
+                    || (fila1 - 1) == (fila2 + 1) && (col1 - 1) == (col2 + 1)) {
+                System.out.println(posPiezasFilasNegros[i] + "          " + posPiezasColumnasNegras[i]);
+                if ((posPiezasFilasNegros[i] == fila2 + 1) && (posPiezasColumnasNegras[i] == col2 - 1)
+                        || (posPiezasFilasNegros[i] == fila2 + 1) && (posPiezasColumnasNegras[i] == col2 + 1)) {
                     peonesNegros[i].setBounds(xBlanco, 0, ancho, largo);
                     vidasNegras--;
                     xBlanco += 30;
+                    posPiezasFilasNegros[i] = 0;
+                    posPiezasColumnasNegras[i] = 0;
                 }
             } else if ((fila1 + 1) == (fila2 - 1) && (col1 - 1) == (col2 + 1)) {
 
-                if ((posPiezasFilasBlancas[i] == fila2 - 1) && (posPiezasColumnasBlancas[i] == col2 + 1)) {
+                if ((posPiezasFilasBlancas[i] == fila2 - 1) && (posPiezasColumnasBlancas[i] == col2 + 1)
+                        || (posPiezasFilasNegros[i] == fila2 + 1) && (posPiezasColumnasNegras[i] == col2 - 1)) {
                     peonesBlancos[i].setBounds(xNegro, 0, ancho, largo);
                     vidasBlancas--;
                     xNegro += 30;
+                    posPiezasFilasBlancas[i] = 0;
+                    posPiezasColumnasBlancas[i] = 0;
                 }
             }
         }
